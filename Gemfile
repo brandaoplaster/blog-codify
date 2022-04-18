@@ -33,4 +33,5 @@ group :test do
   gem "simplecov", "~> 0.21.2"
   gem "shoulda-matchers"
   gem "database_cleaner-active_record", "~> 2.0"
+  gem "simplecov", "~> 0.21.2", require: false
 end
