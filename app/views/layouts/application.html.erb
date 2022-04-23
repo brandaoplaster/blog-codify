@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogCodify</title>
+    <title>The Codify</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+
+    <header>
+      <%= render "shared/navbar" %>
+    </header>
+
+    <main class="pt-4">
+    <%= render "shared/search" %>
+      <%= yield %>
+    </main>
+
+    <footer class="bg-neutral-500">
+      <%= render "shared/footer" %>
+    </footer>
+
+
   </body>
 </html>
