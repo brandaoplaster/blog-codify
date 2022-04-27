@@ -13,6 +13,11 @@
 
   <body>
 
+  <% if current_user %>
+    <main>
+      <%= yield %>
+    </main>
+  <% else %>
     <header>
       <%= render "shared/navbar" %>
     </header>
@@ -25,7 +30,7 @@
     <footer class="bg-neutral-500">
       <%= render "shared/footer" %>
     </footer>
-
+  <% end %>
 
   </body>
 </html>
