@@ -1,20 +1,17 @@
 <div class="antialiased bg-gray-200">
 
-	<div x-data="{ sidemenu: false }" class="h-screen flex overflow-hidden" x-cloak @keydown.window.escape="sidemenu = false">
+	<div class="h-screen flex overflow-hidden">
 
     <div class="md:hidden">
-			<div @click="sidemenu = false" class="fixed inset-0 z-30 bg-gray-600 opacity-0 pointer-events-none transition-opacity ease-linear duration-300" :class="{'opacity-75 pointer-events-auto': sidemenu, 'opacity-0 pointer-events-none': !sidemenu}"></div>
+			<div class="fixed inset-0 z-30 bg-gray-600 opacity-0 pointer-events-none transition-opacity ease-linear duration-300" :class="{'opacity-75 pointer-events-auto': sidemenu, 'opacity-0 pointer-events-none': !sidemenu}"></div>
 
-			<!-- Small Screen Menu -->
 			<div class="fixed inset-y-0 left-0 flex flex-col z-40 max-w-xs w-full bg-white transform ease-in-out duration-300 -translate-x-full" :class="{'translate-x-0': sidemenu, '-translate-x-full': !sidemenu}">
 
-				<!-- Brand Logo / Name -->
 				<div class="flex items-center px-6 py-3 h-16">
 					<div class="text-2xl font-bold tracking-tight text-gray-800">
             The Codify
           </div>
 				</div>
-				<!-- @end Brand Logo / Name -->
 
 				<div class="px-4 py-2 flex-1 h-0 overflow-y-auto">
 					<ul>
@@ -114,20 +111,16 @@
 				</div>
 
 			</div>
-			<!-- @end Small Screen Menu -->
+
 		</div>
 
-
-		<!-- Menu Above Medium Screen -->
 		<div class="bg-white w-64 min-h-screen overflow-y-auto hidden md:block shadow relative z-30">
 
-			<!-- Brand Logo / Name -->
 			<div class="flex items-center px-6 py-3 h-16">
 				<div class="text-2xl font-bold tracking-tight text-gray-800">
           The Codify
         </div>
 			</div>
-			<!-- @end Brand Logo / Name -->
 
 			<div class="px-4 py-2">
 				<ul>
@@ -227,9 +220,34 @@
 
 			</div>
 		</div>
-		<!-- @end Menu Above Medium Screen -->
 
-		<div class="flex-1 flex-col relative z-0 overflow-y-auto">
+		<div class="flex flex-col w-screen">
+
+			<header class="flex h-16 px-6 sm:px-10 bg-white">
+				<div class="flex flex-col items-start my-4 w-auto cursor-pointer">
+					<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+					</svg>
+				</div>
+
+				<div class="flex flex-row items-end w-auto my-2 ml-auto">
+					<div class="flex-1 p-3">
+						<div class="hidden md:flex md:flex-col md:items-end md:leading-tight" >
+							<span class="font-semibold">BrandaoPlaster</span>
+						</div>
+					</div>
+
+					<div class="flex-1">
+						<button class="p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 rounded-full">
+							<svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</header>
+
+		<div class="flex-1 relative z-0 overflow-y-auto">
 			<div class="md:max-w-6xl md:mx-auto px-4 py-8">
 				<div class="overflow-x-auto bg-white rounded-lg shadow">
 					<table class="w-full whitespace-no-wrap bg-white overflow-hidden table-striped">
@@ -348,6 +366,7 @@
 				</div>
 
 			</div>
+		</div>
 		</div>
 	</div>
 </div>
