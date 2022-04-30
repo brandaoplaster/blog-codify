@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Codify</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="antialiased bg-gray-200">
+
+  <div class="h-screen flex overflow-hidden">
+
+    <%= render "admin/shared/sidebar" %>
+
+		<div class="flex flex-col w-screen">
+
+			<%= render "admin/shared/navbar" %>
+
+		<div class="flex-1 relative z-0 overflow-y-auto">
+			<div class="md:max-w-6xl md:mx-auto px-4 py-8">
+				<div class="overflow-x-auto bg-white rounded-lg shadow">
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+  </body>
+</html>
