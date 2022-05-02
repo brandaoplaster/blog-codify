@@ -1,0 +1,28 @@
+<%= form_for @series, :url => "/admin/series" do |form| %>
+  <% if series.errors.any? %>
+    <div style="color: red">
+      <h2>
+      <%= pluralize(series.errors.count, "error") %>
+        prohibited this series from being saved:
+      </h2>
+
+      <ul>
+        <% series.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <div class="">
+      <div>
+        <%= form.label :title, "title", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.text_field :title, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div class="mt-8">
+        <%= form.submit "save serie", :class => "uppercase text-sm font-bold tracking-wide bg-gray-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline" %>
+      </div>
+    </div>
+  </div>
+<% end %>
