@@ -1,0 +1,44 @@
+<%= form_for @user, :url => "/admin/users" do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2>
+      <%= pluralize(user.errors.count, "error") %>
+        prohibited this suser from being saved:
+      </h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="lg:w-1/2 md:w-2/3 mx-auto">
+    <div class="">
+      <div>
+        <%= form.label :username, "username", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.text_field :username, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div>
+        <%= form.label :bio, "bio", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.text_area :bio, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div>
+        <%= form.label :email, "email", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.email_field :email, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div>
+        <%= form.label :password, "password", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.password_field :password, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div>
+        <%= form.label :password_confirmation, "password confirmation", :class => "uppercase text-sm text-gray-600 font-bold" %>
+        <%= form.password_field :password_confirmation, :class => "w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" %>
+      </div>
+      <div class="mt-8">
+        <%= form.submit "save user", :class => "uppercase text-sm font-bold tracking-wide bg-gray-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline" %>
+      </div>
+    </div>
+  </div>
+<% end %>
